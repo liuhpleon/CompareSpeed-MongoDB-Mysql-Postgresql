@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>search</title>
+	</head>
+	<body>
+		<div id = "unloading">
+			<h2>input word you want to search</h2>
+			<input type="text" id = "word" placeholder="word">
+			<input type="submit" id = "submit" value="submit">
+			<br>
+			<!--
+			*input price range(optional, start must not greater than end):
+			$<input type="number" id="start" placeholder="start price"> -
+			$<input type="number" id="end" placeholder="end price">
+			-->
+			<div> select dataset size:
+				<br>
+				<select name="select" id = "data_size">
+					<option value="100k">100k</option>
+					<option value="350k">350k</option>
+					<option value="500k">500k</option>
+					<option value="1500k">1500k</option>
+				</select>
+			</div>
+			<div>
+				<h2>performance</h2>
+				<h4>mysql:</h4>
+				<div>
+					&nbsp&nbsp&nbsp query count: <span id = mysql_count></span><br>
+					&nbsp&nbsp&nbsp execution time (seconds): <span id = mysql_time></span><br>
+				</div>
+			</div>
+			<div>
+				<h4>postgresql:</h4>
+				<div>
+					&nbsp&nbsp&nbsp query count: <span id = postgresql_count></span><br>
+					&nbsp&nbsp&nbsp execution time (seconds): <span id = postgresql_time></span><br>
+				</div>
+			</div>
+			<div>
+				<h4>mongodb:</h4>
+				<div>
+					&nbsp&nbsp&nbsp query count: <span id = mongodb_count></span><br>
+					&nbsp&nbsp&nbsp execution time (seconds): <span id = mongodb_time></span><br>
+				</div>
+				
+			</div>
+		</div>
+	<div id="loading" align="center">
+	    <h1>Wait.....</h1>
+		<img src = "http://www.owlhatworld.com/wp-content/uploads/2015/12/57.gif">
+	</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='search.js')}}"></script>
+</body>
+	</body>
+</html>
